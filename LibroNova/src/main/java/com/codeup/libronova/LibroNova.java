@@ -4,13 +4,22 @@
 
 package com.codeup.libronova;
 
+import static com.codeup.libronova.Confing.ConnectinFactory.getConecction;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  *
  * @author Coder
  */
 public class LibroNova {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+    public static void main(String[]args) {
+         try (Connection conn = getConecction()) {
+            System.out.println("✅ Conexión exitosa a la base de datos: " );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+ }
 }
+
