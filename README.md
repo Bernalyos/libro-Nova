@@ -74,9 +74,9 @@ LibroNova/
   - `app.log`: Activity and error log.
 
 ## Coder Information
-- **Name:** [Your Name]
-- **Clan:** [Your Clan]
-- **Email:** [Your Email]
+- **Name:** [Yoshira Barros]
+- **Clan:** [Cienega]
+- **Email:** [barrosyoshira@gmail.com]
 - **Document:** [Your Document]
 
 ---
