@@ -1,10 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.codeup.libronova.domain;
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
+
+import java.time.OffsetDateTime;
 
 /**
  *
@@ -12,26 +11,51 @@ import java.time.LocalDateTime;
  */
 public class Book {
     
-    private int id;
-    private String isbn;
+    // Identificadores (Usando Long para IDs auto-incrementales es estándar)
+    private Long id;
+    private String isbn; // Clave de negocio (VARCHAR 13)
+
+    // Core Data
     private String title;
     private String author;
-    private int stock;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private String category;
+    private BigDecimal referencePrice;
 
+    // Inventory
+    private int totalCopies;
+    private int availableCopies;
+
+    // Status and Audit
+    private boolean isActive;
+    private OffsetDateTime createdAt;
+
+    // --- CONSTRUCTORES ---
+    
+    // 1. Constructor vacío (requerido por muchos frameworks ORM como JPA)
     public Book() {}
 
-    public Book(int id, String isbn, String title, String author, int stock) {
+    // 2. Constructor Completo (para inicializar desde la base de datos)
+    public Book(Long id, String isbn, String title, String author, String category, 
+                int totalCopies, int availableCopies, BigDecimal referencePrice, 
+                boolean isActive, OffsetDateTime createdAt) {
         this.id = id;
         this.isbn = isbn;
         this.title = title;
         this.author = author;
-        this.stock = stock;
+        this.category = category;
+        this.totalCopies = totalCopies;
+        this.availableCopies = availableCopies;
+        this.referencePrice = referencePrice;
+        this.isActive = isActive;
+        this.createdAt = createdAt;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+   
+    
+    // --- GETTERS y SETTERS ---
+
+    public Long getId () { return id; }
+    public void setId(Long id) { this.id = id; }
 
     public String getIsbn() { return isbn; }
     public void setIsbn(String isbn) { this.isbn = isbn; }
@@ -42,20 +66,47 @@ public class Book {
     public String getAuthor() { return author; }
     public void setAuthor(String author) { this.author = author; }
 
-    public int getStock() { return stock; }
-    public void setStock(int stock) { this.stock = stock; }
+    // Corregidos: Getter y Setter para Category
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    // Corregidos: Getter y Setter para Total Copies
+    public int getTotalCopies() { return totalCopies; }
+    public void setTotalCopies(int totalCopies) { this.totalCopies = totalCopies; }
 
-    public LocalDateTime getUpdatedAt() { return updatedAt; }
-    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+    // Corregidos: Getter y Setter para Available Copies
+    public int getAvailableCopies() { return availableCopies; }
+    public void setAvailableCopies(int availableCopies) { this.availableCopies = availableCopies; }
 
+    // Corregidos: Getter y Setter para Reference Price
+    public BigDecimal getReferencePrice() { return referencePrice; }
+    public void setReferencePrice(BigDecimal referencePrice) { this.referencePrice = referencePrice; }
+
+    // Corregidos: Getter y Setter para Is Active
+    public boolean getIsActive() { return isActive; }
+    public void setIsActive(boolean isActive) { this.isActive = isActive; }
+
+    // Corregidos: Usando OffsetDateTime y su Getter/Setter
+    public OffsetDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt( OffsetDateTime createdAt) { this.createdAt = createdAt; }
+
+    // --- toString() ---
+    
     @Override
     public String toString() {
-        return String.format("Book{id=%d, isbn='%s', title='%s', author='%s', stock=%d}", 
-                              id, isbn, title, author, stock);
-    }
+        return "Book{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", category='" + category + '\'' +
+                ", totalCopies=" + totalCopies +
+                ", availableCopies=" + availableCopies +
+                ", referencePrice=" + referencePrice +
+                ", isActive=" + isActive +
+                ", createdAt=" + createdAt +
+                '}';
 }
-    
+
+}
 
