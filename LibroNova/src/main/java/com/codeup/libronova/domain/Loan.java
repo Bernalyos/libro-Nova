@@ -33,6 +33,10 @@ public class Loan {
         this.returned = returned;
     }
 
+    public Loan() {
+        
+    }
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -42,14 +46,14 @@ public class Loan {
     public int getBookId() { return bookId; }
     public void setBookId(int bookId) { this.bookId = bookId; }
 
-    public LocalDate getDateLoaned() { return dateLoaned; }
-    public void setDateLoaned(LocalDate dateLoaned) { this.dateLoaned = dateLoaned; }
+    public LocalDate getLoanDate() { return dateLoaned; }
+    public void setLoanDate(LocalDate dateLoaned) { this.dateLoaned = dateLoaned; }
 
     public LocalDate getDateDue() { return dateDue; }
     public void setDateDue(LocalDate dateDue) { this.dateDue = dateDue; }
 
-    public boolean isReturned() { return returned; }
-    public void setReturned(boolean returned) { this.returned = returned; }
+    public boolean getReturnDate() { return returned; }
+    public void setReturnDate(boolean returned) { this.returned = returned; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
@@ -62,5 +66,7 @@ public class Loan {
         return "Loan{id=%s, memberId=%s, bookId=%s, dateLoaned=%s, dateDue=%s, returned=%s, createdAt=%s, updatedAt=%s}"
             .formatted(id, memberId, bookId, dateLoaned, dateDue, returned, createdAt, updatedAt);
     }
+
+   
 
 }

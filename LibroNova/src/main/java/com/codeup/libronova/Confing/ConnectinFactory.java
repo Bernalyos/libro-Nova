@@ -1,11 +1,13 @@
 
 package com.codeup.libronova.Confing;
 
+import com.mysql.cj.jdbc.MysqlDataSource;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import javax.sql.DataSource;
 
 
 /**
@@ -14,7 +16,7 @@ import java.util.Properties;
  */
 public class ConnectinFactory {
      
-    public static Connection getConecction() throws SQLException{
+    public static Connection getConnection() throws SQLException{
         
         try (InputStream input = ConnectinFactory.class.getClassLoader().getResourceAsStream("db.properties")) {
             Properties props = new Properties();
@@ -39,8 +41,16 @@ public class ConnectinFactory {
         }
 
     }
-            
+
+    public static DataSource getDataSource() {
+        MysqlDataSource ds = new MysqlDataSource();
+        ds.setURL("jdbc:mysql://localhost:3306/tu_basededatos?serverTimezone=UTC");
+        ds.setUser("tu_usuario");
+        ds.setPassword("tu_contraseña");
+        return ds;
+    }
+}      
        
-}
+
    
 

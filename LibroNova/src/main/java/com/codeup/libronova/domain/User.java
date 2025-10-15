@@ -17,20 +17,21 @@ public class User {
     }
     
     
-    public User ( int id, String username, String password, Rol rol){
-        
-        this.id = id;
+// ...existing code...
+    public User(String username, String password, String rol) {
         this.username = username;
         this.password = password;
-        this.rol = rol;
-         
+        if (rol != null) {
+            this.rol = Rol.valueOf(rol.trim().toUpperCase());
+        }
     }
+// ...existing code...
     
     public int getId(){ return id;}
     public void setId( int id){ this.id = id;}
     
-    public String getUser(){ return username;}
-    public void setUserNam( String unsername){ this.username = username;}
+    public String getUserName(){ return username;}
+    public void setUserName( String unsername){ this.username = username;}
     
     public String getPassword(){ return password;}
     public void setPasdword(){ this.password = password;}
