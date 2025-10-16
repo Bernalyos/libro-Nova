@@ -59,9 +59,17 @@ LibroNova/
 ## Screenshots
 > Add images of the JOptionPane interface and examples of listings/tables here.
 
+<img width="610" height="293" alt="image" src="https://github.com/user-attachments/assets/b1626e5e-c90d-477e-824f-7ec61e8fbf9d" />
+
+<img width="1071" height="643" alt="image" src="https://github.com/user-attachments/assets/af456fc1-5ca0-4fe2-aebd-915a18ffc266" />
+
+
+
 ## Diagrams
 ### Class Diagram
-> Include the UML diagram of the main classes and relationships here.
+> <img width="1536" height="1024" alt="Image 16 oct 2025, 08_39_50 a m" src="https://github.com/user-attachments/assets/0ec4c4b3-b181-4c79-9f9f-2f512df47b99" />
+
+
 
 ### Use Case Diagram
 ><img width="687" height="481" alt="Diagrama de componente drawio" src="https://github.com/user-attachments/assets/f3349df8-4322-490f-8eda-055fcc0b0945" />
