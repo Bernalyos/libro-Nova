@@ -64,7 +64,8 @@ LibroNova/
 > Include the UML diagram of the main classes and relationships here.
 
 ### Use Case Diagram
-> Include the use case diagram for the actors: Administrator, Assistant, Member.
+><img width="687" height="481" alt="Diagrama de componente drawio" src="https://github.com/user-attachments/assets/f3349df8-4322-490f-8eda-055fcc0b0945" />
+
 
 ## Exports & Logs
 - **CSV:**
